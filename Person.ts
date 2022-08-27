@@ -1,9 +1,12 @@
 export class Person {
-  greeting: string;
-  constructor(message: string) {
-    this.greeting = message;
+  fullName: string;
+  constructor(firstname: string, middlename: string, lastname: string) {
+    this.fullName = firstname + middlename + lastname;
   }
-  getGreeting() {
-    return 'Olá, ' + this.greeting;
+  getfullName() {
+    return 'Olá, ' + this.fullName;
+  }
+  getbirthdayYear() {
+    return;
   }
 }

@@ -5,15 +5,7 @@ import { Person } from './Person.ts';
 let title: string = 'Aula 26/08';
 let paragraph: string = 'Blablabla...';
 
-let counter = 0;
-
-let greeter = new Person('Impiedoso');
-
-let IntervalId = setInterval(() => {
-  counter = counter + 1;
-  const appP: HTMLElement = document.getElementById('app.p.counter');
-  appP.innerHTML = 'Contador:' + counter;
-}, 1000);
+let fullName = new Person();
 
 const btn = document.getElementById('app.btn');
 btn?.addEventListener('click', alertMethod);
@@ -21,8 +13,16 @@ function alertMethod(this: HTMLElement, ev: Event) {
   alert('Alertando com TypeScript');
 }
 
+declare function create(o: object | null): any;
+create({ firstName: 'Beatriz', middleName: 'Castro ', lastName: 'de Araujo' });
+
+const appDivObject: HTMLElement = document.getElementById('app-Obj');
+appDivObject.innerHTML = `
+<h1>Object</h1>
+`;
+
 // Write TypeScript code!
 const appH1: HTMLElement = document.getElementById('app.h1');
 appH1.innerHTML = title;
 const appP: HTMLElement = document.getElementById('app.p');
-appP.innerHTML = greeter.getGreeting();
+appP.innerHTML = fullName.getfullName();
